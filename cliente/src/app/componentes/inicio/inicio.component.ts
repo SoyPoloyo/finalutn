@@ -46,27 +46,39 @@ export class InicioComponent implements OnInit {
 
     this.usuariosServicio.capturaUsuarios().subscribe(
 
-      (res:any[]) => {  
+      res => {
+        this.usuarios = res;
 
-				for(var i = 0; 1 < res.length; i++){
 
-					if(res[i].nombre == this.usuario.nombre &&
-					   res[i].password == this.usuario.password){
+         var i = 0;
 
-						this.identificador = res[i].id;
-						this.usuarioI = res[i].nombre;
+          do {
 
-						localStorage.setItem("id", this.identificador)
-            localStorage.setItem("nombre", this.usuarioI)
-            this.route.navigate(['/inicio/usuarios']);
+            if(this.usuario.nombre == res[i].nombre && 
+               this.usuario.password == res[i].password){
 
-					}else{
-            this.credencial = true;
+                this.identificador = res[i].id;
+                this.usuarioI = res[i].nombre;
+    
+                localStorage.setItem("id", this.identificador);
+                localStorage.setItem("nombre", this.usuarioI);
+
+              this.credencial= true;
+              console.log('funciona')
+              this.route.navigate(['/inicio/usuarios']);
+              
+
+            }else{
+              console.log('no funciona')
+            }
+                  var nombre = res[i].nombre ;
+                  var password = res[i].password ;
+           
+          i++
+          } while ( i < this.usuarios.length);
+
         
-					}
-				}
-
-			},
+      },
 
            err => console.error(err)
     );
