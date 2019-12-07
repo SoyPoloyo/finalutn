@@ -30,7 +30,15 @@ export class UsuariosService {
     return this.http.post(`${this.API_URI}/registro`,usuario);
   }
 
-  actualizarGame(id:string|number, actualizadoUsuario:Usuario): Observable<Usuario>{
+  actualizarUsuario(id:string|number, actualizadoUsuario:Usuario): Observable<Usuario>{
     return this.http.put(`${this.API_URI}/registro/${id}`, actualizadoUsuario);
   }
+
+
+  ingresar(usuario){
+
+  
+
+  }
+
 }

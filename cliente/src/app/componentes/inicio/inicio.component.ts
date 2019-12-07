@@ -48,9 +48,7 @@ export class InicioComponent implements OnInit {
 
       res => {
         this.usuarios = res;
-
-
-         var i = 0;
+        let i = 0;
 
           do {
 
@@ -65,15 +63,13 @@ export class InicioComponent implements OnInit {
 
               this.credencial= true;
               console.log('funciona')
-              this.route.navigate(['/inicio/usuarios']);
+              this.route.navigate(['/inicio/usuarios',this.identificador]);
               
 
             }else{
               console.log('no funciona')
             }
-                  var nombre = res[i].nombre ;
-                  var password = res[i].password ;
-           
+
           i++
           } while ( i < this.usuarios.length);
 
@@ -82,18 +78,6 @@ export class InicioComponent implements OnInit {
 
            err => console.error(err)
     );
-
-
-
-}
-
-cerrarSesion(){
-
-  localStorage.removeItem("id");
-  localStorage.removeItem("nombre");
-  localStorage.clear();
-  this.identificador = null;
-  this.usuarioI = null;
 
 }
 

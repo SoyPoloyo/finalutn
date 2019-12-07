@@ -15,7 +15,7 @@ const routes: Routes = [
     redirectTo: '/inicio',
     pathMatch: 'full'
   },
-  {
+  { 
     path: 'games',
     component:GameListaComponent
   },
@@ -38,7 +38,7 @@ const routes: Routes = [
     component:RegistroComponent
   },
   {
-    path: 'inicio/usuarios',
+    path: 'inicio/usuarios/:id',
     component:UsuariosComponent
   }
 
