@@ -5,9 +5,6 @@ import { ActivatedRoute, Router} from '@angular/router';
 
 import { UsuariosService } from '../../servicios/usuarios.service';
 import { Subscriber } from 'rxjs';
-import { Alert } from 'selenium-webdriver';
-import { CloneVisitor } from '@angular/compiler/src/i18n/i18n_ast';
-import { $, element } from 'protractor';
 
 @Component({
   selector: 'app-inicio',
@@ -64,7 +61,10 @@ export class InicioComponent implements OnInit {
               this.credencial= true;
               console.log('funciona')
               this.route.navigate(['/inicio/usuarios',this.identificador]);
-              
+
+             
+
+              document.getElementById("linkgame").removeAttribute("hidden");
 
             }else{
               console.log('no funciona')
