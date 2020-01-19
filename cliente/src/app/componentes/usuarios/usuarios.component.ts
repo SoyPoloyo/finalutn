@@ -79,6 +79,11 @@ export class UsuariosComponent implements OnInit {
   localStorage.removeItem("nombre");
   localStorage.clear();
   this.route.navigate(['/inicio']);
+
+  document.getElementById("linklogin").removeAttribute("hidden");
+  document.getElementById("linkgame").hidden=true;
+  document.getElementById("linkaddgame").hidden=true;
+  document.getElementById("linkusuario").hidden=true;
   
 
 }

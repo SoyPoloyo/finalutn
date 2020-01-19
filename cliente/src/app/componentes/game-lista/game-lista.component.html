@@ -1,5 +1,6 @@
 <div class="col-md-4" *ngFor="let juego of games">
     <br>
+
     <div class="card text-center">
 
         <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
@@ -15,7 +16,7 @@
         <div class="card-body">
 
             <p>{{juego.description}}</p>
-            <a [routerLink]="['/games/editar', juego.id]" class="btn btn-info btn-block" (click)="editarGame(juego.id)">Editar juego</a>
+            <a [routerLink]="['/games/editar', juego.id]" class="btn btn-info btn-block" >Editar juego</a>
 
         </div>
 

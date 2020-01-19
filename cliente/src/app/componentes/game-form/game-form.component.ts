@@ -3,7 +3,11 @@ import { Game } from '../../modelos/Game';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import {GamesService} from '../../servicios/games.service';
-import { Subscriber } from 'rxjs';
+import { Subscriber, from } from 'rxjs';
+import { InicioComponent } from '../inicio/inicio.component';
+import { UsuariosComponent } from '../usuarios/usuarios.component';
+import { UsuariosService } from 'src/app/servicios/usuarios.service';
+import { currentId } from 'async_hooks';
 
 @Component({
   selector: 'app-game-form',
@@ -16,6 +20,7 @@ export class GameFormComponent implements OnInit {
 
   game: Game = {
     id: 0,
+    user_id: localStorage.id,
     title: '',
     description: '',
     image: '',

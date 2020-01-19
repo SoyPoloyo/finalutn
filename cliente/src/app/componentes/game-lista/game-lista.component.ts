@@ -13,6 +13,7 @@ export class GameListaComponent implements OnInit {
   @HostBinding('class') classes = 'row';
 
   games: any = [];
+  gamesid: any = [];
 
   constructor( private juegosServicio: GamesService) { }
 
@@ -25,7 +26,31 @@ export class GameListaComponent implements OnInit {
           this.juegosServicio.capturaGames().subscribe(
 
             res => {
+
               this.games = res;
+
+              for (let i = 0; i < this.games.length; i++) {
+                var juegos = this.games[i];
+
+                if (juegos.user_id == localStorage.id) {
+
+                  
+                  var casas = new Array;
+                  casas = juegos;
+
+                    console.log(casas)
+
+                  this.gamesid = casas;
+                    
+                    
+                }
+
+              }
+
+              
+
+
+              
             },
             err => console.error(err)
           );
