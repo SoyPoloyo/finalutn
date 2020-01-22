@@ -16,6 +16,11 @@
         <div class="card-body">
 
             <p>{{juego.description}}</p>
+            
+            <a [routerLink]="[]" class="btn btn-warning btn-block" >Personajes</a>
+
+            <a [routerLink]="[]" class="btn btn-success btn-block" >Misiones</a>
+
             <a [routerLink]="['/games/editar', juego.id]" class="btn btn-info btn-block" >Editar juego</a>
 
         </div>

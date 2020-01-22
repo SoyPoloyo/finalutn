@@ -28,19 +28,21 @@ export class GameListaComponent implements OnInit {
             res => {
 
               this.games = res;
+            
+
+              console.log(this.games[""] , "fallo");
+
 
               for (let i = 0; i < this.games.length; i++) {
-                var juegos = this.games[i];
 
-                if (juegos.user_id == localStorage.id) {
+                      this.gamesid = this.games[i];
+                      console.log(localStorage.id )
 
-                  
-                  var casas = new Array;
-                  casas = juegos;
+                if (this.gamesid.user_id == localStorage.id) {
+  
+                    console.log(this.games, ("hola"))
 
-                    console.log(casas)
-
-                  this.gamesid = casas;
+                    
                     
                     
                 }

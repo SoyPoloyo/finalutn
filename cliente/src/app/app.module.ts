@@ -15,6 +15,8 @@ import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 // servicios
 import {GamesService} from './servicios/games.service';
 import { UsuariosService } from './servicios/usuarios.service';
+import { PersonajesComponent } from './componentes/personajes/personajes.component';
+import { MisionesComponent } from './componentes/misiones/misiones.component';
 
 
 
@@ -26,7 +28,9 @@ import { UsuariosService } from './servicios/usuarios.service';
     GameListaComponent,
     RegistroComponent,
     InicioComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    PersonajesComponent,
+    MisionesComponent
   ],
   imports: [
     BrowserModule,
