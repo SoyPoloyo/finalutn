@@ -5,7 +5,10 @@ import {GameListaComponent} from './componentes/game-lista/game-lista.component'
 import {GameFormComponent} from './componentes/game-form/game-form.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
-import { UsuariosComponent } from './componentes/usuarios/usuarios.component'
+import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
+import { PersonajesComponent } from './componentes/personajes/personajes.component';
+import { MisionesComponent } from './componentes/misiones/misiones.component';
+
 
 
 const routes: Routes = [
@@ -28,11 +31,18 @@ const routes: Routes = [
     component: GameFormComponent
   },
   {
+    path: 'games/personajes',
+    component:PersonajesComponent
+  },
+  {
+    path: 'games/misiones',
+    component:MisionesComponent
+  },
+  {
     path: 'inicio',
     component:InicioComponent
     
   },
-  
   {
     path: 'inicio/crearUsuario',
     component:RegistroComponent
