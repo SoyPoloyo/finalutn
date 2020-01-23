@@ -31,16 +31,18 @@ const routes: Routes = [
     component: GameFormComponent
   },
   {
-    path: 'games/personajes',
-    component:PersonajesComponent
+    path: 'inicio',
+    component:InicioComponent
+    
   },
   {
     path: 'games/misiones',
     component:MisionesComponent
-  },
+    
+  }, 
   {
-    path: 'inicio',
-    component:InicioComponent
+    path: 'games/personajes',
+    component:PersonajesComponent
     
   },
   {

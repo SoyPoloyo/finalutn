@@ -23,7 +23,7 @@ export class GamesService {
     return this.http.get(`${this.API_URI}/games`);
   }
 
-  capturaGame(id:string){
+  capturaGame(id:string ){
     return this.http.get(`${this.API_URI}/games/${id}`);
   }
 

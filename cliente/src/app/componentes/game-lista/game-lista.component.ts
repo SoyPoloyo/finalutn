@@ -2,6 +2,8 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 
 import { GamesService } from '../../servicios/games.service'
 import { Game } from 'src/app/modelos/Game';
+import { Usuario } from '../../modelos/usuario';
+
 
 @Component({
   selector: 'app-game-lista',
@@ -14,6 +16,7 @@ export class GameListaComponent implements OnInit {
 
   games: any = [];
   gamesid: any = [];
+  user_id: string = document.getElementById("linkusuario").textContent;
 
   constructor( private juegosServicio: GamesService) { }
 
@@ -21,38 +24,17 @@ export class GameListaComponent implements OnInit {
     this.tomarJuegos();
   }
 
-  tomarJuegos(){
+  tomarJuegos() {
 
-          this.juegosServicio.capturaGames().subscribe(
+    
+    
+          this.juegosServicio.capturaGame(localStorage.id).subscribe(
 
             res => {
 
               this.games = res;
-            
-
-              console.log(this.games[""] , "fallo");
 
 
-              for (let i = 0; i < this.games.length; i++) {
-
-                      this.gamesid = this.games[i];
-                      console.log(localStorage.id )
-
-                if (this.gamesid.user_id == localStorage.id) {
-  
-                    console.log(this.games, ("hola"))
-
-                    
-                    
-                    
-                }
-
-              }
-
-              
-
-
-              
             },
             err => console.error(err)
           );

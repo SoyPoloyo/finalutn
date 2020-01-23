@@ -1,7 +1,7 @@
 export interface Game{
 
     id?: number;
-    user_id?:number;
+    user_id?:string;
     title?: string;
     description?: string;
     image?: string;

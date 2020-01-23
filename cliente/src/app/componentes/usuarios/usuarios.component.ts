@@ -6,6 +6,7 @@ import { Usuario } from 'src/app/modelos/usuario';
 
 import {UsuariosService} from '../../servicios/usuarios.service';
 import { Subscriber } from 'rxjs'
+import { InicioComponent } from '../inicio/inicio.component';
 
 @Component({
   selector: 'app-usuarios',

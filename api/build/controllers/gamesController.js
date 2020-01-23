@@ -20,16 +20,24 @@ class GamesController {
             res.json(games);
         });
     }
+
     obtenerUno(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const games = yield database_1.default.query('SELECT * FROM game WHERE id = ?', [id]);
+            const games = yield database_1.default.query('SELECT * FROM game WHERE user_id = ?', [id]);
+            res.json(games);
+        });
+    }
+    /*obtenerUno(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const games = yield database_1.default.query('SELECT * FROM game WHERE id = '?', [id]');
             if (games.length > 0) {
                 return res.json(games[0]);
             }
             res.status(404).json({ text: ' juego no existe' });
         });
-    }
+    }*/
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO game set ?', [req.body]);

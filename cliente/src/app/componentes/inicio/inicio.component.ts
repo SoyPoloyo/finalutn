@@ -23,8 +23,6 @@ export class InicioComponent implements OnInit {
     created_at: new Date()
   };
 
-  credencial : boolean = false;
-
   usuarios: any = [];
   
   public identificador;
@@ -37,6 +35,7 @@ export class InicioComponent implements OnInit {
 
     this.identificador = localStorage.getItem("id");
     this.usuarioI = localStorage.getItem("nombre");
+
     
   }
 
@@ -61,9 +60,10 @@ export class InicioComponent implements OnInit {
                 localStorage.setItem("id", this.identificador);
                 localStorage.setItem("nombre", this.usuarioI);
 
-              this.credencial= true;
               console.log('funciona')
               this.route.navigate(['/inicio/usuarios',this.identificador]);
+
+            
 
               document.getElementById("linkgame").removeAttribute("hidden");
               document.getElementById("linkaddgame").removeAttribute("hidden");
