@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { MisionesService } from 'src/app/servicios/misiones.service';
+import { Misiones } from 'src/app/modelos/misiones';
 
 @Component({
   selector: 'app-misiones',
@@ -7,9 +9,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MisionesComponent implements OnInit {
 
-  constructor() { }
+  @HostBinding('class') classes = 'row';
+
+  misiones: any = [];
+
+  constructor( private misionesServicio: MisionesService) { }
 
   ngOnInit() {
+
+    this.tomarMisiones();
   }
+
+  tomarMisiones(){
+
+    this.misionesServicio.capturaMisiones().subscribe(
+
+      res => {
+
+        this.misiones = res;
+
+
+      },
+      err => console.error(err)
+    );
+  }
+
+
+  eliminarMision(id:string){
+    this.misionesServicio.borrarMisiones(id).subscribe(
+    res=> {
+          console.log(res);
+          this.tomarMisiones();
+    },
+    err=> console.error(err)
+    )
+    }
 
 }

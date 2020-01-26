@@ -2,7 +2,6 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 
 import { GamesService } from '../../servicios/games.service'
 import { Game } from 'src/app/modelos/Game';
-import { Usuario } from '../../modelos/usuario';
 
 
 @Component({

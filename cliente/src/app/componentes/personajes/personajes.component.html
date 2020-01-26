@@ -1,1 +1,26 @@
-<p>personajes works!</p>
+<div class="col-md-4" *ngFor="let juego of personajes" >
+    <br>
+
+    <div class="card text-center">
+
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            {{juego.nombre}}
+            <button class="btn btn-danger" (click)="eliminarPersonaje(juego.id)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+
+        </div>
+
+        <img [src]="juego.imagen" class="card-img-top tamano" alt="">
+
+        <div class="card-body">
+
+            <p>{{juego.descripcion}}</p>
+
+            <a [routerLink]="['/games/editar', juego.id]" class="btn btn-secondary btn-block" >Editar personaje</a>
+
+        </div>
+
+    </div>
+
+</div>

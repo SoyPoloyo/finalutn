@@ -11,12 +11,14 @@ import { GameListaComponent } from './componentes/game-lista/game-lista.componen
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
+import { PersonajesComponent } from './componentes/personajes/personajes.component';
+import { MisionesComponent } from './componentes/misiones/misiones.component';
 
 // servicios
 import {GamesService} from './servicios/games.service';
 import { UsuariosService } from './servicios/usuarios.service';
-import { PersonajesComponent } from './componentes/personajes/personajes.component';
-import { MisionesComponent } from './componentes/misiones/misiones.component';
+import {PersonajesService} from './servicios/personajes.service';
+
 
 
 
@@ -40,7 +42,8 @@ import { MisionesComponent } from './componentes/misiones/misiones.component';
   ],
   providers: [
     GamesService,
-    UsuariosService
+    UsuariosService,
+    PersonajesService
   ],
   bootstrap: [AppComponent]
 })

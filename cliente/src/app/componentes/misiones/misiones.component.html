@@ -1,1 +1,27 @@
-<p>misiones works!</p>
+<div class="col-md-4" *ngFor="let juego of misiones" >
+    <br>
+
+    <div class="card text-center">
+
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            {{juego.nombre_mision}}
+            
+
+        </div>
+
+        <img [src]="juego.imagen" class="card-img-top tamano" alt="">
+
+        <div class="card-body">
+
+            <p>{{juego.texto_mision}}</p>
+
+            <a [routerLink]="['/games/editar', juego.id]" class="btn btn-info" >Editar mision</a>
+            <button class="btn btn-danger" (click)="eliminarPersonaje(juego.id)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
