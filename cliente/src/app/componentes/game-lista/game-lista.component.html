@@ -17,7 +17,7 @@
 
             <p>{{juego.description}}</p>
             
-            <a [routerLink]="['/games/personajes']" class="btn btn-info col-6" >Personajes</a>
+            <a (click)="redireccionPersonajes()" [routerLink]="['/games/personajes']"  class="btn btn-info col-6" >Personajes</a>
 
             <a [routerLink]="['/games/misiones']" class="btn btn-success col-6" >Misiones</a>
 

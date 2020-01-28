@@ -16,7 +16,7 @@ export class MisionesService {
     return this.http.get(`${this.API_URI}/misiones`);
   }
 
-  capturaMisione(id:string){
+  capturaMision(id:string){
     return this.http.get(`${this.API_URI}/misiones/${id}`);
   }
 
@@ -24,7 +24,7 @@ export class MisionesService {
     return this.http.delete(`${this.API_URI}/misiones/${id}`);
   }
 
-  guardarMisiones(mision: Misiones){
+  guardarMision(mision: Misiones){
     return this.http.post(`${this.API_URI}/misiones`,mision);
   }
 

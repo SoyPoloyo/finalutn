@@ -18,6 +18,8 @@ import { MisionesComponent } from './componentes/misiones/misiones.component';
 import {GamesService} from './servicios/games.service';
 import { UsuariosService } from './servicios/usuarios.service';
 import {PersonajesService} from './servicios/personajes.service';
+import { PersonajeFormComponent } from './componentes/personaje-form/personaje-form.component';
+import { MisionFormComponent } from './componentes/mision-form/mision-form.component';
 
 
 
@@ -32,7 +34,9 @@ import {PersonajesService} from './servicios/personajes.service';
     InicioComponent,
     UsuariosComponent,
     PersonajesComponent,
-    MisionesComponent
+    MisionesComponent,
+    PersonajeFormComponent,
+    MisionFormComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,8 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { PersonajesComponent } from './componentes/personajes/personajes.component';
 import { MisionesComponent } from './componentes/misiones/misiones.component';
+import { PersonajeFormComponent } from './componentes/personaje-form/personaje-form.component';
+import { MisionFormComponent } from './componentes/mision-form/mision-form.component';
 
 
 
@@ -27,8 +29,24 @@ const routes: Routes = [
     component:GameFormComponent
   },
   {
+    path: 'personajes/agregar',
+    component:PersonajeFormComponent
+  },
+  {
+    path: 'misiones/agregar',
+    component:MisionFormComponent
+  },
+  {
     path:'games/editar/:id',
     component: GameFormComponent
+  },
+  {
+    path:'personajes/editar/:id',
+    component: PersonajeFormComponent
+  },
+  {
+    path:'misiones/editar/:id',
+    component: MisionFormComponent
   },
   {
     path: 'inicio',

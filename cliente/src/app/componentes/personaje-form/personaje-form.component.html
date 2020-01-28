@@ -1,0 +1,38 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form action="">
+
+                <div class="form-group">
+                    <input type="text" name="titulo" [(ngModel)]="personaje.nombre" placeholder="Nombre del personaje" class="form-control" autofocus>
+                </div>
+
+                <div class="form-group">
+                    <input type="text"  name="user_id" [(ngModel)]="personaje.card_id" class="form-control" readonly hidden>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="descripcion" [(ngModel)]="personaje.descripcion" placeholder="Escribe una descripcion del personaje" rows="2" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input type="url" name="image" [(ngModel)]="personaje.imagen" placeholder="Imagen" class="form-control">
+                </div>
+
+                <button class=" btn btn-success btn-block" (click)="editar == true ? actualizarPersonaje() : guardarPersonajeNuevo()">
+                    Guardar
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <img [src]="personaje.imagen == '' ? './assets/noimage.jpg' : personaje.imagen" class="card-img-top">
+        <h3>{{personaje.id}}. {{personaje.nombre == '' ? 'Titulo' : personaje.nombre}}</h3>
+        <p>{{personaje.descripcion == '' ? 'Descripcion' : personaje.descripcion}}</p>
+        <p>{{personaje.created_at | date: 'yyyy-MM-dd'}}</p>
+    </div>
+</div>

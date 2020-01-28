@@ -37,7 +37,7 @@ export class PersonajesComponent implements OnInit {
     );
 }
 
-eliminarGame(id:string){
+eliminarPersonaje(id:string){
 this.personajesServicio.borrarPersonaje(id).subscribe(
 res=> {
       console.log(res);

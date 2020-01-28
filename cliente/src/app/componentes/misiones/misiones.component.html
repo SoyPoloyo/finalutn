@@ -1,3 +1,9 @@
+<div class="card-body col-12">
+
+
+    <a [routerLink]="['/misiones/agregar']" class="btn btn-info btn-block" >Agregar mision</a>
+
+</div>
 <div class="col-md-4" *ngFor="let juego of misiones" >
     <br>
 
@@ -15,7 +21,7 @@
 
             <p>{{juego.texto_mision}}</p>
 
-            <a [routerLink]="['/games/editar', juego.id]" class="btn btn-info" >Editar mision</a>
+            <a [routerLink]="['/misiones/editar', juego.id]" class="btn btn-info" >Editar mision</a>
             <button class="btn btn-danger" (click)="eliminarPersonaje(juego.id)">
                 <i class="far fa-trash-alt"></i>
             </button>

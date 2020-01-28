@@ -14,7 +14,7 @@ export class GameListaComponent implements OnInit {
   @HostBinding('class') classes = 'row';
 
   games: any = [];
-  gamesid: any = [];
+  public gamesid: any = [];
   user_id: string = document.getElementById("linkusuario").textContent;
 
   constructor( private juegosServicio: GamesService) { }
@@ -32,7 +32,7 @@ export class GameListaComponent implements OnInit {
             res => {
 
               this.games = res;
-
+              this.gamesid = this.games.id;
 
             },
             err => console.error(err)
@@ -49,6 +49,13 @@ export class GameListaComponent implements OnInit {
     )
   }
 
+  
+    redireccionPersonajes(){
+
+  
+            localStorage.setItem("card_id", this.games.id);
+
+      }
  
 
 }

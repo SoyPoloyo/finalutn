@@ -1,0 +1,33 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form action="">
+
+                <div class="form-group">
+                    <input type="text" name="titulo" [(ngModel)]="mision.nombre_mision" placeholder="Nombre de la mision" class="form-control" autofocus>
+                </div>
+
+                <div class="form-group">
+                    <input type="text"  name="user_id" [(ngModel)]="mision.card_id" class="form-control" readonly hidden>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="descripcion" [(ngModel)]="mision.texto_mision" placeholder="Escribe una descripcion de la mision" rows="2" class="form-control"></textarea>
+                </div>
+
+                <button class=" btn btn-success btn-block" (click)="editar == true ? actualizarMision() : guardarMisionNueva()">
+                    Guardar
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h3>{{mision.id}}. {{mision.nombre_mision == '' ? 'Titulo' : mision.nombre_mision}}</h3>
+        <p>{{mision.texto_mision == '' ? 'Descripcion' : mision.texto_mision}}</p>
+        <p>{{mision.created_at | date: 'yyyy-MM-dd'}}</p>
+    </div>
+</div>
