@@ -1,9 +1,5 @@
 # finalutn
-Proyeco final de la utn
-
-Miembros: -Mauricio Sauma Bustamante
-          -Heliomar Vargas Madrigal
-          -José Ignacio Molina González
+Proyeco final del tecnigo en programacion - UTN
           
           
 Para iniciar el proyecto se abre primero XAMPP y se crea la base de datos
